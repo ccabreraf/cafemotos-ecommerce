@@ -1,7 +1,7 @@
-import cart from "../assets/icons8-carrito-de-compras.gif";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { CartWidget } from "./CartWidget";
 
 export const NavBar = () => (
     <Navbar bg="dark" variant="dark">
@@ -12,8 +12,8 @@ export const NavBar = () => (
                 <Nav.Link href="#features">Productos</Nav.Link>
                 <Nav.Link href="#pricing">Contacto</Nav.Link>
             </Nav>
+            <CartWidget />
         </Container>
-        <img src={cart} alt="Carrito" /> 0
     </Navbar>
 )
 
