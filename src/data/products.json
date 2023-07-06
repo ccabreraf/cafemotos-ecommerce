@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "nombre": "Filtro de aceite (Moto 1)",
+        "categoria": "Filtros",
+        "img": ""
+    },
+    {
+        "id": 2,
+        "nombre": "Filtro de aceite (Moto 2)",
+        "categoria": "Filtros",
+        "img": ""
+    },
+    {
+        "id": 3,
+        "nombre": "Filtro de aceite (Moto 3)",
+        "categoria": "Filtros",
+        "img": ""
+    },
+    {
+        "id": 4,
+        "nombre": "Pastillas de freno delanteras (Moto 1)",
+        "categoria": "Pastillas",
+        "img": ""
+    },
+    {
+        "id": 5,
+        "nombre": "Pastillas de freno delanteras (Moto 2)",
+        "categoria": "Pastillas",
+        "img": ""
+    },
+    {
+        "id": 6,
+        "nombre": "Pastillas de freno delanteras (Moto 3)",
+        "categoria": "Pastillas",
+        "img": ""
+    },
+    {
+        "id": 7,
+        "nombre": "Bujía (Moto 1)",
+        "categoria": "Bujía",
+        "img": ""
+    },
+    {
+        "id": 8,
+        "nombre": "Bujía (Moto 2)",
+        "categoria": "Bujía",
+        "img": ""
+    },
+    {
+        "id": 9,
+        "nombre": "Bujía (Moto 3)",
+        "categoria": "Bujía",
+        "img": ""
+    }
+]
+
