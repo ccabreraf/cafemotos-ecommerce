@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 export const Item = ({ repuestos }) => {
     return (
         <Card style={{ width: '18rem' }} key={repuestos.id} className="float-start">
-            <Card.Img variant="top" src={repuestos.img} />
+            <Card.Img variant="top" src={repuestos.img} objectfit='cover' borderradius="55" width='50vw' height='230vh'/>
             <Card.Body>
                 <Card.Title>{repuestos.nombre}</Card.Title>
                 <Card.Text>Categoría: {repuestos.categoria}</Card.Text>
@@ -16,5 +16,3 @@ export const Item = ({ repuestos }) => {
         </Card>
     )
 }
-
-/* <div key={repuestos.id}>{repuestos.nombre}</div> */

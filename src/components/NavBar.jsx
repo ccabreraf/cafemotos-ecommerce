@@ -14,7 +14,9 @@ console.log([...unica])
 export const NavBar = () => (
     <Navbar bg="dark" variant="dark">
         <Container>
-            <Navbar.Brand>Cafe Motos</Navbar.Brand>
+            <NavLink style={{textDecoration: 'none'}} to={"/"}>
+                <Navbar.Brand>Cafe Motos</Navbar.Brand>
+                </NavLink>
             <Nav className="me-auto"> {[...unica].map(item => (
                 <NavLink key={item} className="nav-link" to={`/category/${item}`}>{item}</NavLink>
             ))}
