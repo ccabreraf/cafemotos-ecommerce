@@ -3,55 +3,55 @@
         "id": 1,
         "nombre": "Filtro de aceite (Moto 1)",
         "categoria": "Filtros",
-        "img": ""
+        "img": "https://static3.depositphotos.com/1000868/117/i/950/depositphotos_1173359-stock-photo-oil-filter.jpg"
     },
     {
         "id": 2,
         "nombre": "Filtro de aceite (Moto 2)",
         "categoria": "Filtros",
-        "img": ""
+        "img": "https://st3.depositphotos.com/27700508/31760/i/1600/depositphotos_317602730-stock-photo-gray-oil-filter-filtering-cleaning.jpg"
     },
     {
         "id": 3,
         "nombre": "Filtro de aceite (Moto 3)",
         "categoria": "Filtros",
-        "img": ""
+        "img": "https://st3.depositphotos.com/1010263/15066/i/1600/depositphotos_150665378-stock-photo-oil-filter-part-for-car.jpg"
     },
     {
         "id": 4,
-        "nombre": "Pastillas de freno delanteras (Moto 1)",
+        "nombre": "Pastillas de freno (Moto 1)",
         "categoria": "Pastillas",
-        "img": ""
+        "img": "https://st4.depositphotos.com/37084428/39807/i/1600/depositphotos_398073644-stock-photo-brake-pads-motorcycle.jpg"
     },
     {
         "id": 5,
-        "nombre": "Pastillas de freno delanteras (Moto 2)",
+        "nombre": "Pastillas de freno (Moto 2)",
         "categoria": "Pastillas",
-        "img": ""
+        "img": "https://st2.depositphotos.com/1824224/8986/i/950/depositphotos_89861548-stock-photo-brake-pads-on-white-background.jpg"
     },
     {
         "id": 6,
-        "nombre": "Pastillas de freno delanteras (Moto 3)",
+        "nombre": "Pastillas de freno (Moto 3)",
         "categoria": "Pastillas",
-        "img": ""
+        "img": "https://st2.depositphotos.com/3457985/5398/i/950/depositphotos_53987729-stock-photo-new-auto-brake-pads.jpg"
     },
     {
         "id": 7,
         "nombre": "Bujía (Moto 1)",
         "categoria": "Bujía",
-        "img": ""
+        "img": "https://st.depositphotos.com/1000128/3460/i/950/depositphotos_34608029-stock-photo-spark-plugs.jpg"
     },
     {
         "id": 8,
         "nombre": "Bujía (Moto 2)",
         "categoria": "Bujía",
-        "img": ""
+        "img": "https://static8.depositphotos.com/1129853/877/i/950/depositphotos_8770693-stock-photo-sparkplug-illustration.jpg"
     },
     {
         "id": 9,
         "nombre": "Bujía (Moto 3)",
         "categoria": "Bujía",
-        "img": ""
+        "img": "https://st.depositphotos.com/1001044/2015/i/950/depositphotos_20156897-stock-photo-spark-plug-on-a-white.jpg"
     }
 ]
 
