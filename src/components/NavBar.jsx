@@ -23,7 +23,3 @@ export const NavBar = () => (
         </Container>
     </Navbar>
 )
-
-/* <Nav.Link href="#home">Inicio</Nav.Link>
-<Nav.Link href="#features">Productos</Nav.Link>
-<Nav.Link href="#pricing">Contacto</Nav.Link> */

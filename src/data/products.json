@@ -38,19 +38,19 @@
     {
         "id": 7,
         "nombre": "Bujía (Moto 1)",
-        "categoria": "Bujía",
+        "categoria": "Bujia",
         "img": "https://st.depositphotos.com/1000128/3460/i/950/depositphotos_34608029-stock-photo-spark-plugs.jpg"
     },
     {
         "id": 8,
         "nombre": "Bujía (Moto 2)",
-        "categoria": "Bujía",
+        "categoria": "Bujia",
         "img": "https://static8.depositphotos.com/1129853/877/i/950/depositphotos_8770693-stock-photo-sparkplug-illustration.jpg"
     },
     {
         "id": 9,
         "nombre": "Bujía (Moto 3)",
-        "categoria": "Bujía",
+        "categoria": "Bujia",
         "img": "https://st.depositphotos.com/1001044/2015/i/950/depositphotos_20156897-stock-photo-spark-plug-on-a-white.jpg"
     }
 ]
