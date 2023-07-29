@@ -5,6 +5,7 @@
         "categoria": "Filtros",
         "img": "https://static3.depositphotos.com/1000868/117/i/950/depositphotos_1173359-stock-photo-oil-filter.jpg",
         "detail": "Filtro de aceite para modelo 1",
+        "Stock": 20,
         "precio": 1000
     },
     {
@@ -13,6 +14,7 @@
         "categoria": "Filtros",
         "img": "https://st3.depositphotos.com/27700508/31760/i/1600/depositphotos_317602730-stock-photo-gray-oil-filter-filtering-cleaning.jpg",
         "detail": "Filtro de aceite para modelo 2",
+        "Stock": 20,
         "precio": 2000
     },
     {
@@ -21,6 +23,7 @@
         "categoria": "Filtros",
         "img": "https://st3.depositphotos.com/1010263/15066/i/1600/depositphotos_150665378-stock-photo-oil-filter-part-for-car.jpg",
         "detail": "Filtro de aceite para modelo 3",
+        "Stock": 20,
         "precio": 3000
     },
     {
@@ -29,6 +32,7 @@
         "categoria": "Pastillas",
         "img": "https://st4.depositphotos.com/37084428/39807/i/1600/depositphotos_398073644-stock-photo-brake-pads-motorcycle.jpg",
         "detail": "Pastillas de freno para modelo 1",
+        "Stock": 10,
         "precio": 1000
     },
     {
@@ -37,6 +41,7 @@
         "categoria": "Pastillas",
         "img": "https://st2.depositphotos.com/1824224/8986/i/950/depositphotos_89861548-stock-photo-brake-pads-on-white-background.jpg",
         "detail": "Pastillas de freno para modelo 2",
+        "Stock": 10,
         "precio": 2000
     },
     {
@@ -45,6 +50,7 @@
         "categoria": "Pastillas",
         "img": "https://st2.depositphotos.com/3457985/5398/i/950/depositphotos_53987729-stock-photo-new-auto-brake-pads.jpg",
         "detail": "Pastillas de freno para modelo 3",
+        "Stock": 10,
         "precio": 3000
     },
     {
@@ -53,6 +59,7 @@
         "categoria": "Bujia",
         "img": "https://st.depositphotos.com/1000128/3460/i/950/depositphotos_34608029-stock-photo-spark-plugs.jpg",
         "detail": "Bujía de alta calidad para modelo 1",
+        "Stock": 5,
         "precio": 1000
     },
     {
@@ -61,6 +68,7 @@
         "categoria": "Bujia",
         "img": "https://static8.depositphotos.com/1129853/877/i/950/depositphotos_8770693-stock-photo-sparkplug-illustration.jpg",
         "detail": "Bujía de alta calidad para modelo 2",
+        "Stock": 5,
         "precio": 2000
     },
     {
@@ -69,6 +77,7 @@
         "categoria": "Bujia",
         "img": "https://st.depositphotos.com/1001044/2015/i/950/depositphotos_20156897-stock-photo-spark-plug-on-a-white.jpg",
         "detail": "Bujía de alta calidad para modelo 3",
+        "Stock": 5,
         "precio": 3000
     }
 ]
