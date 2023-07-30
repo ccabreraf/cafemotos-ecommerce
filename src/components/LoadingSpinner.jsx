@@ -4,7 +4,7 @@ import logoTienda from '../assets/Logo-CMotos Chico.jpeg';
 
 function LoadingSpinner() {
 return (
-<Container><img src={logoTienda} height="380" width="480" alt="logojimp" className="img-fluid" />
+<Container><img src={logoTienda} height="380" width="480" alt="logo cafe motos" className="img-fluid" />
     <div class="spinner-grow text-primary" role="status">
     <span class="visually-hidden">Cargando...</span>
     </div>
