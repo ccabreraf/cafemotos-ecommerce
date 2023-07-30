@@ -60,8 +60,8 @@ null
           <div className="col-sm-6 col-md-6 col-lg-6 push-bit text-center">
             <div className="clearfix py-3">
               <div className="pull-right">
-                <h1><strong className="text-success">{repuestos.nombre}</strong><br /></h1>
-                <h3><strong className="text-success">{repuestos.categoria}</strong><br /></h3>
+                <h1><strong>{repuestos.nombre}</strong><br /></h1>
+                <h3><strong>{repuestos.categoria}</strong><br /></h3>
                 <span className="h2"><strong><Badge bg="success">Precio {repuestos.price}$</Badge></strong>
                 {estaEnCarrito(repuestos.id) ?
 <Badge className="bg-secondary ms-2">x{getItemQuantity(repuestos.id)} = {repuestos.price * getItemQuantity(repuestos.id)}$</Badge>
@@ -74,9 +74,6 @@ null}
               </span>
             </div>
             <hr />
-            <span>
-              {repuestos.detail}
-            </span>
             <span>
               {repuestos.detail}
             </span>

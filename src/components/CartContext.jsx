@@ -27,7 +27,7 @@ export function CartContextProvider( {children} ) {
     }
 }
 
-// Revisamos si el item está en el cart
+// Revisar si el item está en el cart
 
 const isInCart = (id) => {
     return cart.some((item) => item.id === id);
@@ -37,13 +37,13 @@ const isInCart = (id) => {
     return cart.some((item) => item.id === id);
   };
   
-// Obtenemos un item específico del cart
+// Item específico del carrito
 
   const getItemFromCart = (id) => {
     return cart.find((item) => item.id === id);
   };
 
-// Leemos la cantidad de unidades del item específico
+// Unidades del item específico
 
 const getItemQuantity = (id) => {
     const item = getItemFromCart(id);
@@ -51,7 +51,7 @@ const getItemQuantity = (id) => {
   };
 
 
-// Obtenemos el precio total del carrito
+// Precio total del carrito
 
     function precioTotal() {
         let total = 0;
@@ -65,7 +65,7 @@ const getItemQuantity = (id) => {
         return cantidad;
       }
 
-// Removemos un item del cart
+// Sacar un item del cart
 
     const removeFromCart = (id) => {
     const newCart = [...cart];
@@ -75,7 +75,7 @@ const getItemQuantity = (id) => {
     setCart(cartFilter);
     }
     
- // Vaciamos el cart   
+ // Vaciar el cart   
     const clearCart = () => {
         setCart([]);
     }

@@ -6,7 +6,8 @@ import ItemDetail from "./ItemDetail.jsx"
 
 
 export const ItemDetailContainer = props => {
-    const [product, setProduct] = useState([])
+    const [product, setProduct] = useState([]);
+    const { id } = useParams();
 
     useEffect(() => {
         const promesa = new Promise((resolve, rejected) => {
@@ -15,12 +16,10 @@ export const ItemDetailContainer = props => {
             }, 2000)
             
         })
-
         promesa.then(result => {
-            setProduct(result[2])
+            setProduct(result[id - 1])
         })
-    }, [])
-
+    }, [id])
     return ( 
         <Container className='mt-4'>
             <h1>Detalle</h1>
