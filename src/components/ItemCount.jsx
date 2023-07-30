@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import Swal from 'sweetalert2'
 
 
-const ItemCount = ({stock, initial, onAdd, nombre}) => {
+const ItemCount = ({stock, initial, onAdd, itemName}) => {
   const [count, setCount] = useState(initial)
   function pluralizeWord(singularWord, pluralWord) {
     return count > 1 ? pluralWord : singularWord;
@@ -42,7 +42,7 @@ const ItemCount = ({stock, initial, onAdd, nombre}) => {
 const handleOnAdd = () => {
   const Toast = Swal.mixin({
     toast: true,
-    background: '#ff0000',
+    background: '#60b3ff',
     showConfirmButton: false,
     timer: 2000,
     timerProgressBar: false,
@@ -53,7 +53,7 @@ const handleOnAdd = () => {
   })
   Toast.fire({
     icon: 'success',
-    title: `${count} ${nombre} ${pluralizeWord("agregado", "agregados")} al carrito`
+    title: `${count} ${itemName} ${pluralizeWord("agregado", "agregados")} al carrito`
   })
         onAdd(count);
         setCount(initial);

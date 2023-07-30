@@ -1,16 +1,13 @@
-import React, { useState } from 'react'
-import { Container } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Button, Container } from 'react-bootstrap';
 import useCartContext from './CartContext';
-// import Swal from 'sweetalert2'
-// import { Link } from 'react-router-dom';
-// import logoTienda from '../assets/Logo-CMotos Chico.jpeg';
-// import '../../assets/css/animaciones.css'
+import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 function CheckOut() {
     document.title = `Cafe Motos - CheckOut`;
-    const { cart, clearCart, itemsTotal, precioTotal } = useCartContext();
-    // const [OrderID, setOrderID] = useState();
-    
+    const { cart, itemsTotal, precioTotal } = useCartContext();
+
     // Estados para los campos del formulario de cliente
     
     const [nombre, setNombre] = useState('');
@@ -64,7 +61,11 @@ function CheckOut() {
     } else {
         setSubmitted(true);
         setErrormsg(false);
-        alert('Orden Lista');
+        Swal.fire({
+            icon: 'success',
+            title: 'Pedido completado',
+            text: 'Gracias por su compra.',
+        });
     }
     };
 
@@ -94,7 +95,7 @@ function CheckOut() {
         </div>
         );
     };
-
+    return (
     <div className="container">
         <main>
         <div className="py-3 text-center">
@@ -136,7 +137,7 @@ function CheckOut() {
                 <div className="row g-3">
                 <div className="col-sm-12">
                     <label htmlFor="firstName" className="form-label">Nombre completo</label>
-                    <input onChange={handleNombre} value={nombre} type="text" className="form-control input" id="name" placeholder="Nombres y Apellidos" required />
+                    <input onChange={handleNombre} value={nombre} type="text" className="form-control input" id="name" placeholder="Nombre y Apellidos" required />
                     <div className="invalid-feedback">
                     Nombre requerido
                     </div>
@@ -151,7 +152,7 @@ function CheckOut() {
                 </div>
                 <div className="col-12">
                     <label htmlFor="phone" className="form-label">Teléfono</label>
-                    <input onChange={handlePhone} value={phone} type="phone" className="form-control input"  id="phone" placeholder="3124567890" required />
+                    <input onChange={handlePhone} value={phone} type="phone" className="form-control input"  id="phone" placeholder="56912345678" required />
                     <div className="invalid-feedback">
                     Por favor ingrese su número de teléfono
                     </div>
@@ -164,8 +165,14 @@ function CheckOut() {
             </form>
             
             </div>
+            
         </div>
         </main>
+        <hr />
+        <div>
+            <Link to="/"><Button className="bg-success m3">Volver al inicio</Button></Link>
+        </div>
     </div>
+    )
 }
 export default CheckOut;
