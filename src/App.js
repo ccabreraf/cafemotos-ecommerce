@@ -20,7 +20,7 @@ export default function App() {
         <Route path="/category/:id" element={<ItemListContainer greetings="Nuestros Productos" />} />
         <Route path="/item/:id" element={<ItemDetailContainer />} />
         <Route path="/cart" element={<CartView greeting="Este es su carrito"/>} />
-        <Route path="/checkout" element={<CheckOut greeting="Favor completar datos para finalizar su compra."/>} />
+        <Route path="/checkout" element={<CheckOut />} />
       </Routes>
       
     </BrowserRouter>

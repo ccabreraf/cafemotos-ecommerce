@@ -1,33 +1,15 @@
 import React, { useState } from 'react'
-import {  Badge, Container } from 'react-bootstrap';
-import { useCartContext } from './CartContext';
-import Swal from 'sweetalert2'
-import { Link } from 'react-router-dom';
-import logoTienda from '../assets/Logo-CMotos Chico.jpeg';
+import { Container } from 'react-bootstrap';
+import useCartContext from './CartContext';
+// import Swal from 'sweetalert2'
+// import { Link } from 'react-router-dom';
+// import logoTienda from '../assets/Logo-CMotos Chico.jpeg';
 // import '../../assets/css/animaciones.css'
 
-
-// function createBuyOrder() {
-//     const { cart } = useCartContext();
-//     const buyTimeStamp = Timestamp.now();
-//     const orderWithDate = {
-//         ...orderData,
-//         date: buyTimeStamp
-//     };
-// }
-
-// function createBuyOrder(orderData){
-    // const buyTimeStamp = Timestamp.now();
-    // const orderWithDate = {
-    //     ...orderData,
-    //     date: buyTimeStamp
-    // };
-
-
-function CheckOut( greeting ) {
+function CheckOut() {
     document.title = `Cafe Motos - CheckOut`;
     const { cart, clearCart, itemsTotal, precioTotal } = useCartContext();
-    const [OrderID, setOrderID] = useState();
+    // const [OrderID, setOrderID] = useState();
     
     // Estados para los campos del formulario de cliente
     
@@ -57,71 +39,34 @@ function CheckOut( greeting ) {
         setSubmitted(false);
     };
 
-    function handleBuy(){
-        const itemsToBuy = cart.map((item) => ( {
-            id: item.id,
-            cant: item.cant,
-            name: item.name,
-            pricex1: item.price,
-            total: item.price * item.cant,
-        }
-        ))
-
-        const buyOrder = {
-            buyer: {
-            name: `${nombre}`,
-            phone: `${phone}`,
-            email: `${email}`,
-            },
-            items: itemsToBuy,
-            total: precioTotal(),
-        }
-        createBuyOrder(buyOrder).then(response => {
-            
-            Swal.fire({
-                icon: 'success',
-                title: `Compra realizada con éxito id ${response}`,
-                text: 'Gracias por su compra',
-                })
-                
-                
-        })
-        //setTimeout para que se vacíe el carrito luego de mostrar el Swal con el id de la compra
-        setTimeout(() => {
-            clearCart();
-            setOrderID(true);
-        }, 3000);
-                
-        }
-
 
     // Funciones para verificar los inputs del formulario de cliente y mostrar los errores (si los hay) 
 
-        function onlyLettersAndSpaces(str) {
-        return /^[A-Za-z\s]*$/.test(str);
-        }
-        function containsArroba(str) {
-        const tieneArroba = /@/;
-        return tieneArroba.test(str);
-        }
+    function onlyLettersAndSpaces(str) {
+    return /^[A-Za-z\s]*$/.test(str);
+    }
+    function containsArroba(str) {
+    const tieneArroba = /@/;
+    return tieneArroba.test(str);
+    }
 
-        function onlyNumbers(str) {
-        return /^[0-9]+$/.test(str);
-        }
-        
+    function onlyNumbers(str) {
+    return /^[0-9]+$/.test(str);
+    }
+    
 
-        // Handle para el formulario de datos del cliente
-        const handleSubmit = (e) => {
-        e.preventDefault();
-        if (!onlyLettersAndSpaces(nombre) || nombre === '' || !containsArroba(email) || email === '' || !onlyNumbers(phone) || phone === '') {
-        setErrormsg(true);
-        
-        } else {
-            setSubmitted(true);
-            setErrormsg(false);
-            handleBuy();
-        }
-        };
+    // Handle para el formulario de datos del cliente
+    const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!onlyLettersAndSpaces(nombre) || nombre === '' || !containsArroba(email) || email === '' || !onlyNumbers(phone) || phone === '') {
+    setErrormsg(true);
+    
+    } else {
+        setSubmitted(true);
+        setErrormsg(false);
+        alert('Orden Lista');
+    }
+    };
 
     // Mensaje de éxito
     const successMessage = () => {
@@ -150,31 +95,7 @@ function CheckOut( greeting ) {
         );
     };
 
-
-        
-            if (cart.length === 0) {
-                return <section id="Carrito" className="py-5 text-center container">
-                <div className="row py-lg-5">
-                    <div className="col-12">
-                    <p>No hay articulos en su carrito</p>
-                    <img src={logoTienda} width="480px" alt="Cafe Motos" className="img-fluid" />
-                    <p></p>
-                    <Link to="/">Regresar al menú</Link>
-                </div>
-                </div>
-            </section>
-        } else if(OrderID) {
-            return (
-            <section id="carrito" className="py-2 text-center container slide-in-fwd-center">
-                <div className="row py-lg-2">
-                <div><Badge bg="primary" className="m-1"><h6>Su ID de compra ${OrderID} Total de articulos: {itemsTotal()}</h6></Badge><Badge className="m-3" bg="primary"><h6> Costo Total: {precioTotal()} $</h6></Badge><div></div><div><Link to="/">Regresar al catálogo</Link></div> 
-                </div>
-                </div>
-            </section>
-            )
-        }
-    return (
-        <div className="container">
+    <div className="container">
         <main>
         <div className="py-3 text-center">
             <h2>Checkout</h2>
@@ -190,8 +111,8 @@ function CheckOut( greeting ) {
             {cart.map(item => (
                 <Container key={item.id} className="list-group-item justify-content-between lh-sm"><li className="list-group-item d-flex justify-content-between lh-sm">
                 <div>
-                    <h6 className="my-0">{item.category} {item.name} x{item.cant}</h6>
-                    <small className="text-muted">Descripción {item.description}</small>
+                    <h6 className="my-0">{item.categoria} {item.nombre} x{item.cant}</h6>
+                    <small className="text-muted">Descripción {item.detail}</small>
                 </div>
                 <span className="text-muted">${item.price}</span>
                 </li>
@@ -199,7 +120,7 @@ function CheckOut( greeting ) {
             ))}
             <li className="list-group-item d-flex justify-content-between lh-sm">
                 <div>
-                    <h6 className="my-0">Total: ${precioTotal()} COP</h6>
+                    <h6 className="my-0">Total: ${precioTotal()} CLP</h6>
                 </div>
                 </li>
             </ul>
@@ -246,8 +167,5 @@ function CheckOut( greeting ) {
         </div>
         </main>
     </div>
-
-    )
 }
-
-export default CheckOut
+export default CheckOut;
