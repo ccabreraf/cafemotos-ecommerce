@@ -17,7 +17,7 @@ export default function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<ItemListContainer greetings="Nuestros Productos" />} />
-        <Route path="/category/:id" element={<ItemListContainer greetings="Nuestros Productos" />} />
+        <Route path="/category/:category" element={<ItemListContainer greetings="Nuestros Productos" />} />
         <Route path="/item/:id" element={<ItemDetailContainer />} />
         <Route path="/cart" element={<CartView greeting="Este es su carrito"/>} />
         <Route path="/checkout" element={<CheckOut />} />
