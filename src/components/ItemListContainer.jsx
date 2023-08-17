@@ -19,6 +19,7 @@ export function ItemListContainer( {greeting, items} ) {
                 setLoading(false);
             }); 
         } else {
+            // AQUI CREO QUE ESTA EL PROBLEMA
             document.title = `Cafe Motos Ecommerce - ${category}`;
             getItemsByCategory(category).then(respuestaPromise => {
             setProducts(respuestaPromise);
