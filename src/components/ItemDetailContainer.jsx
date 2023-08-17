@@ -7,15 +7,15 @@ import { getItem as getProducto } from '../data/firestore.js'
 
 export function ItemDetailContainer( {greeting, items} ) {
     const [product, setProduct] = useState([]);
-    const { itemid } = useParams();
+    const { id } = useParams();
     useEffect(() => {
-    getProducto(itemid).then(respuestaPromise => {
+    getProducto(id).then(respuestaPromise => {
         setProduct(respuestaPromise);
     });
     // .catch(errorPromise => {
     //     console.error(errorPromise);
     // });
-    }, [itemid]);
+    }, [id]);
 
     return ( 
         <Container className='mt-4'>
