@@ -8,7 +8,7 @@ export const Item = ({ repuestos }) => {
             <Card.Img variant="top" src={repuestos.img} objectfit='cover' borderradius="55" width='50vw' height='230vh'/>
             <Card.Body>
                 <Card.Title>{repuestos.nombre}</Card.Title>
-                <Card.Text>Categoría: {repuestos.categoria}</Card.Text>
+                <Card.Text>Categoría: {repuestos.category}</Card.Text>
                 <Link to={`/item/${repuestos.id}`}>
                     <Button variant="primary">Ir al producto</Button>
                 </Link>

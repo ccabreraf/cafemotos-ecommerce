@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { Button, Container } from 'react-bootstrap';
+import { Badge, Button, Container } from 'react-bootstrap';
 import useCartContext from './CartContext';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { createBuyOrder } from '../data/firestore.js';
+import logocm from '../assets/Logo-CMotos Chico.jpeg';
 
 function CheckOut() {
     document.title = `Cafe Motos - CheckOut`;
-    const { cart, itemsTotal, precioTotal } = useCartContext();
+    const { cart, clearCart, itemsTotal, precioTotal } = useCartContext();
+    const [OrderID, setOrderID] = useState();
 
     // Estados para los campos del formulario de cliente
     
@@ -36,6 +39,42 @@ function CheckOut() {
         setSubmitted(false);
     };
 
+    function handleBuy(){
+        const itemsToBuy = cart.map((item) => ( {
+            id: item.id,
+            cant: item.cant,
+            name: item.nombre, 
+            pricex1: item.price,
+            total: item.price * item.cant,
+        }
+        ))
+    
+        const buyOrder = {
+            buyer: {
+            name: `${nombre}`,
+            phone: `${phone}`,
+            email: `${email}`,
+            },
+            items: itemsToBuy,
+            total: precioTotal(),
+        }
+        createBuyOrder(buyOrder).then(response => {
+            
+            Swal.fire({
+                icon: 'success',
+                title: `Compra realizada con éxito id ${response}`,
+                text: 'Gracias por su compra',
+                })
+                
+                
+        })
+        // Agrego un setTimeout para que se vacíe el carrito luego de mostrar el Swal con el id de la compra
+        setTimeout(() => {
+            clearCart();
+            setOrderID(true);
+        }, 3000);
+                
+        }
 
     // Funciones para verificar los inputs del formulario de cliente y mostrar los errores (si los hay) 
 
@@ -61,11 +100,12 @@ function CheckOut() {
     } else {
         setSubmitted(true);
         setErrormsg(false);
-        Swal.fire({
-            icon: 'success',
-            title: 'Pedido completado',
-            text: 'Gracias por su compra.',
-        });
+        handleBuy();
+        // Swal.fire({ 
+        //     icon: 'success',
+        //     title: 'Pedido completado',      NO VA
+        //     text: 'Gracias por su compra.',
+        // });
     }
     };
 
@@ -90,11 +130,33 @@ function CheckOut() {
             style={{
             display: errorMsg ? '' : 'none',
             }}>
-            <h4 className="bg-danger text-white scale-in-ver-center">Por favor complete todos los campos correctamente</h4>
+            <h4 className="bg-danger text-white scale-in-ver-center">Por favor complete todos los campos</h4>
             
         </div>
         );
     };
+
+    if (cart.length === 0) {
+        return <section id="Carrito" className="py-5 text-center container">
+        <div className="row py-lg-5">
+            <div className="col-12">
+            <p>No hay articulos en su carrito</p>
+            <img src={logocm} width="480px" alt="JIMP iTech" className="img-fluid" />
+            <p></p>
+            <Link to="/">Regresar al menú</Link>
+        </div>
+        </div>
+    </section>
+    } else if(OrderID) {
+        return (
+        <section id="carrito" className="py-2 text-center container slide-in-fwd-center">
+            <div className="row py-lg-2">
+            <div><Badge bg="primary" className="m-1"><h6>Su ID de compra ${OrderID} Total de articulos: {itemsTotal()}</h6></Badge><Badge className="m-3" bg="primary"><h6> Costo Total: {precioTotal()} $</h6></Badge><div></div><div><Link to="/">Regresar al catálogo</Link></div> 
+            </div>
+            </div>
+        </section>
+        )
+    }
     return (
     <div className="container">
         <main>
@@ -112,7 +174,7 @@ function CheckOut() {
             {cart.map(item => (
                 <Container key={item.id} className="list-group-item justify-content-between lh-sm"><li className="list-group-item d-flex justify-content-between lh-sm">
                 <div>
-                    <h6 className="my-0">{item.categoria} {item.nombre} x{item.cant}</h6>
+                    <h6 className="my-0">{item.category} {item.nombre} x{item.cant}</h6>
                     <small className="text-muted">Descripción {item.detail}</small>
                 </div>
                 <span className="text-muted">${item.price}</span>
@@ -139,7 +201,7 @@ function CheckOut() {
                     <label htmlFor="firstName" className="form-label">Nombre completo</label>
                     <input onChange={handleNombre} value={nombre} type="text" className="form-control input" id="name" placeholder="Nombre y Apellidos" required />
                     <div className="invalid-feedback">
-                    Nombre requerido
+                    Por favor introduzca su nombre
                     </div>
                 </div>
                 

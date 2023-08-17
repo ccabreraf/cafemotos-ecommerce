@@ -21,19 +21,19 @@ function ItemDetail({  repuestos } ) {
     
 }
 
-const catPath = `/category/${repuestos.categoria}`;
+const catPath = `/category/${repuestos.category}`;
 
 if(repuestos.img === undefined){
   return <LoadingSpinner />
   }
 
-  document.title = `Cafe Motos - ${repuestos.categoria}/${repuestos.nombre}`;
+  document.title = `Cafe Motos - ${repuestos.category}/${repuestos.nombre}`;
 
   return (
     <><div><Container className="d-flex text-center justify-content-center p-5 slide-in-fwd-center"><Breadcrumb listProps={{ className: "justify-content-center" }} className="justify-content-center">
     <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>catálogo</Breadcrumb.Item>
     <Breadcrumb.Item linkAs={Link} linkProps={{ to: `${catPath}` }}>
-      {repuestos.categoria}
+      {repuestos.category}
     </Breadcrumb.Item>
     <Breadcrumb.Item active>{repuestos.nombre}</Breadcrumb.Item>
   </Breadcrumb></Container></div>
@@ -61,7 +61,7 @@ null
             <div className="clearfix py-3">
               <div className="pull-right">
                 <h1><strong>{repuestos.nombre}</strong><br /></h1>
-                <h3><strong>{repuestos.categoria}</strong><br /></h3>
+                <h3><strong>{repuestos.category}</strong><br /></h3>
                 <span className="h2"><strong><Badge bg="success">Precio {repuestos.price}$</Badge></strong>
                 {estaEnCarrito(repuestos.id) ?
 <Badge className="bg-secondary ms-2">x{getItemQuantity(repuestos.id)} = {repuestos.price * getItemQuantity(repuestos.id)}$</Badge>
